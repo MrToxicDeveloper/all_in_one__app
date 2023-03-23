@@ -18,6 +18,38 @@ class HomeProvider extends ChangeNotifier {
     "https://www.meesho.com/",
   ];
 
+  List ename2 = [
+    "Wikipedia",
+    "Khan academy",
+    "EDX",
+  ];
+  List elogo2 = [
+    "lib/utils/images/wikipedia.jpg",
+    "lib/utils/images/khan.png",
+    "lib/utils/images/edx.jpg",
+  ];
+  List eweb2 = [
+    "https://www.wikipedia.org/",
+    "https://www.khanacademy.org/",
+    "https://www.edx.org/",
+  ];
+
+  List ename3 = [
+    "Netflix",
+    "Hotstar",
+    "Amazon Prime",
+  ];
+  List elogo3 = [
+    "lib/utils/images/netflix.png",
+    "lib/utils/images/hotstar.jpg",
+    "lib/utils/images/prime.jpg",
+  ];
+  List eweb3 = [
+    "https://www.netflix.com/in/",
+    "https://www.hotstar.com/in#!",
+    "https://www.amazon.in/amazonprime",
+  ];
+
   WebViewController? webViewController;
 
   void initWeb(String webname){
