@@ -1,4 +1,5 @@
 import 'package:all_in_one_app/home_screen/provider/home_provider.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -10,6 +11,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List img = [
+    "lib/utils/images/amzon.jpg",
+    "lib/utils/images/wiki.png",
+  ];
+
   HomeProvider? homeProviderTrue;
   HomeProvider? homeProviderFalse;
 
@@ -64,12 +70,44 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text(
                           "Search for websites",
                           style: TextStyle(
-                              color: Colors.black54, fontWeight: FontWeight.bold),
+                              color: Colors.black54,
+                              fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
                     Icon(Icons.mic_none),
                   ],
+                ),
+              ),
+              Container(
+                height: 200,
+                width: double.infinity,
+                // decoration: BoxDecoration(
+                //   // boxShadow:
+                // ),
+                child: CarouselSlider.builder(
+                  itemCount: img.length,
+                  itemBuilder: (context, index, realIndex) {
+                    return Container(
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black26,
+                            spreadRadius: 0.5,
+                            blurRadius: 1,
+                          ),
+                        ]
+                      ),
+                      child: Image.asset("${img[index]}"),
+                    );
+                  },
+                  options: CarouselOptions(
+                    // aspectRatio: 2.0,
+                    enlargeCenterPage: true,
+                    // viewportFraction: 1.5,
+                    autoPlay: true,
+                    autoPlayAnimationDuration: Duration(seconds: 2),
+                  ),
                 ),
               ),
               ListTile(
