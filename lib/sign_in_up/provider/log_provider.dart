@@ -5,6 +5,7 @@ class LogProvider extends ChangeNotifier {
   Future<void> saveData(String username, String password) async {
     SharedPreferences shr = await SharedPreferences.getInstance();
 
+    //Saving data
     shr.setString('name', username);
     shr.setString('pass', password);
   }
@@ -12,6 +13,7 @@ class LogProvider extends ChangeNotifier {
   Future<Map> readData() async {
     SharedPreferences shr = await SharedPreferences.getInstance();
 
+    //Reading data
     String? name = shr.getString('name');
     String? pass = shr.getString('pass');
 
