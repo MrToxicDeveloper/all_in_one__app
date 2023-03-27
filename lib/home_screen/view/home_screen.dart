@@ -1,6 +1,7 @@
 import 'package:all_in_one_app/home_screen/provider/home_provider.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -82,43 +83,71 @@ class _HomeScreenState extends State<HomeScreen> {
               Container(
                 height: 200,
                 width: double.infinity,
+                child: ImageSlideshow(
+                  height: 300,
+                  width: double.infinity,
+                  autoPlayInterval: 3000,
+                  isLoop: true,
+                  initialPage: 0,
+                  indicatorColor: Colors.grey.shade300,
+                  indicatorBackgroundColor: Colors.grey,
+                  children: [
+                    Container(
+                      height: 250,
+                      padding: EdgeInsets.symmetric(vertical: 30),
+                      child: Image.asset("lib/utils/images/amzon.jpg",fit: BoxFit.cover,),
+                    ),
+                    Container(
+                      height: 250,
+                      padding: EdgeInsets.symmetric(vertical: 30),
+                      child: Image.asset("lib/utils/images/wiki.png",fit: BoxFit.cover,),
+                    ),
+                    Container(
+                      height: 250,
+                      padding: EdgeInsets.symmetric(vertical: 30),
+                      child: Image.asset("lib/utils/images/net.png",fit: BoxFit.cover,),
+                    ),
+                  ],
+                ),
                 // decoration: BoxDecoration(
                 //   // boxShadow:
                 // ),
-                child: CarouselSlider.builder(
-                  itemCount: img.length,
-                  itemBuilder: (context, index, realIndex) {
-                    return Container(
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black26,
-                            spreadRadius: 0.5,
-                            blurRadius: 1,
-                          ),
-                        ]
-                      ),
-                      child: Image.asset("${img[index]}"),
-                    );
-                  },
-                  options: CarouselOptions(
-                    // aspectRatio: 2.0,
-                    enlargeCenterPage: true,
-                    // viewportFraction: 1.5,
-                    autoPlay: true,
-                    autoPlayAnimationDuration: Duration(seconds: 2),
-                  ),
-                ),
+                // child: CarouselSlider.builder(
+                //   itemCount: img.length,
+                //   itemBuilder: (context, index, realIndex) {
+                //     return Container(
+                //       decoration: BoxDecoration(
+                //         boxShadow: [
+                //           BoxShadow(
+                //             color: Colors.black26,
+                //             spreadRadius: 0.5,
+                //             blurRadius: 1,
+                //           ),
+                //         ]
+                //       ),
+                //       child: Image.asset("${img[index]}"),
+                //     );
+                //   },
+                //   options: CarouselOptions(
+                //     // aspectRatio: 2.0,
+                //     enlargeCenterPage: true,
+                //     // viewportFraction: 1.5,
+                //     autoPlay: true,
+                //     autoPlayAnimationDuration: Duration(seconds: 2),
+                //   ),
+                // ),
               ),
-          // SizedBox(height: 10,),
-          // Container(
-          //     height: 10,
-          //     width: 10,
-          //     decoration: BoxDecoration(
-          //       shape: BoxShape.circle,
-          //       color: Colors.grey.shade300,
-          //     ),
-          //   ),
+              // SizedBox(
+              //   height: 10,
+              // ),
+              // Container(
+              //   height: 10,
+              //   width: 10,
+              //   decoration: BoxDecoration(
+              //     shape: BoxShape.circle,
+              //     color: Colors.grey.shade300,
+              //   ),
+              // ),
               ListTile(
                 title: Text(
                   "Ecommerce",

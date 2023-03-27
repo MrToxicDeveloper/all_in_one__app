@@ -20,7 +20,7 @@ void main() {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: 'signin',
+        // initialRoute: 'signin',
         routes: {
           '/': (context) => HomeScreen(),
           'web': (context) => WebScreen(),
