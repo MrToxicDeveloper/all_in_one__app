@@ -89,23 +89,28 @@ class _HomeScreenState extends State<HomeScreen> {
                   autoPlayInterval: 3000,
                   isLoop: true,
                   initialPage: 0,
-                  indicatorColor: Colors.grey.shade300,
-                  indicatorBackgroundColor: Colors.grey,
+                  indicatorColor: Colors.grey,
+                  indicatorBackgroundColor: Colors.grey.shade300,
                   children: [
                     Container(
                       height: 250,
-                      padding: EdgeInsets.symmetric(vertical: 30),
+                      padding: EdgeInsets.only(left: 30,right: 30,bottom: 30),
                       child: Image.asset("lib/utils/images/amzon.jpg",fit: BoxFit.cover,),
                     ),
                     Container(
                       height: 250,
-                      padding: EdgeInsets.symmetric(vertical: 30),
+                      padding: EdgeInsets.only(left: 30,right: 30,bottom: 30),
                       child: Image.asset("lib/utils/images/wiki.png",fit: BoxFit.cover,),
                     ),
                     Container(
                       height: 250,
-                      padding: EdgeInsets.symmetric(vertical: 30),
+                      padding: EdgeInsets.only(left: 30,right: 30,bottom: 30),
                       child: Image.asset("lib/utils/images/net.png",fit: BoxFit.cover,),
+                    ),
+                    Container(
+                      height: 250,
+                      padding: EdgeInsets.only(left: 30,right: 30,bottom: 30),
+                      child: Image.asset("lib/utils/images/flip.jpg",fit: BoxFit.cover,),
                     ),
                   ],
                 ),
